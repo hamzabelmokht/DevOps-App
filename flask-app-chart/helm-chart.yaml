@@ -1,0 +1,6 @@
+apiVersion: v2
+name: DevOps-flask-app
+description: A Helm chart for deploying Flask app & Mysql
+type: application
+version: 1.0
+appVersion: 1.0

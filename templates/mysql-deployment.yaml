@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-ops-app-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev-ops-app-mysql
+      release: initial-release
+  template:
+    metadata:
+      labels:
+        app: dev-ops-app-mysql
+        release: initial-release
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:latest
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: {{.values.mysql.rootPassword}}
+            - name: MYSQL_DATABASE
+              value: {{.values.mysql.database}}

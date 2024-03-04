@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-ops-app  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev-ops-app
+      release: initial-release
+  template:
+    metadata:
+      labels:
+        app: dev-ops-app
+        release: initial-release
+    spec:
+      containers:
+        - name: dev-ops-app
+          image: "hamzabelmo/dev-ops-app"
+          ports:
+            - name: http
+              containerPort: 5000

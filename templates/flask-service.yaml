@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-ops-app
+spec:
+  selector:
+    app: dev-ops-app
+  ports:
+    - protocol: TCP
+      port: 5000 
+      targetPort: http

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+</head>
+<body>
+    <h1>Flask App</h1>
+
+    <form action="/add" method="post">
+        <label for="new_value">Enter a value:</label>
+        <input type="text" id="new_value" name="new_value" required>
+        <button type="submit">Add to Database</button>
+    </form>
+
+    <h2>Database Items:</h2>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.value }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

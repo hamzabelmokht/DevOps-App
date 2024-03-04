@@ -1,0 +1,13 @@
+flask:
+  image:
+    repository: hamzabelmo/dev-ops-app
+    tag: latest
+  service:
+    port: 5000
+
+mysql:
+  image:
+    repository: mysql
+    tag: latest
+  rootPassword: hamza
+  database: DevOpsDB
